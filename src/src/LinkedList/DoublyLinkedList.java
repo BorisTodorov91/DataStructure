@@ -1,27 +1,44 @@
 package LinkedList;
 
-public class LinkedList {
+public class DoublyLinkedList {
 
     private Node head;
     private Node tail;
     private int size;
 
-    public void addFirst(int element){
+    private class Node {
+
+        private int value;
+        private Node next;
+        private Node prev;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return value + "";
+        }
+    }
+
+    public void addFirst(int element) {
 
         Node newNode = new Node(element);
-        if(!isEmpty()){
+        if (!isEmpty()) {
             newNode.next = this.head;
             this.head.prev = newNode; //null
-        }else {
+        } else {
             this.tail = newNode;
         }
         this.head = newNode;
         size++;
 
     }
-    public void addLast(int element){
 
-        if(isEmpty()){
+    public void addLast(int element) {
+
+        if (isEmpty()) {
             addFirst(element);
             return;
         }
@@ -31,26 +48,28 @@ public class LinkedList {
         this.tail = newNode;
         size++;
     }
-    public int deleteFirst(){
-        if (isEmpty()){
+
+    public int deleteFirst() {
+        if (isEmpty()) {
             throw new IllegalStateException("List is empty!");
         }
 
         int result = head.value;
         size--;
         this.head = this.head.next;
-        if(this.size > 1){
+        if (this.size > 1) {
             this.head.prev = null;
         }
-        if(isEmpty()){
+        if (isEmpty()) {
             this.head = null;
             this.tail = null;
         }
         return result;
     }
-    public int deleteLast (){
 
-        if(this.size < 2){
+    public int deleteLast() {
+
+        if (this.size < 2) {
             return deleteFirst();
         }
         int result = this.tail.value;
@@ -65,6 +84,5 @@ public class LinkedList {
     private boolean isEmpty() {
         return this.size == 0;
     }
-
 
 }

@@ -7,7 +7,7 @@ public class main {
         Scanner scanner = new Scanner(System.in);
 
 
-        LinkedList linkedList = new LinkedList();
+        DoublyLinkedList linkedList = new DoublyLinkedList();
 
         linkedList.addFirst(1);
         linkedList.addLast(2);
