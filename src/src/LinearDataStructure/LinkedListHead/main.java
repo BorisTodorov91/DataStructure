@@ -1,4 +1,4 @@
-package LinkedListHead;
+package LinearDataStructure.LinkedListHead;
 
 import java.util.Scanner;
 

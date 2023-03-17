@@ -1,6 +1,4 @@
-package LinkedListHead;
-
-import DoublyLinkedList.DoublyLinkedList;
+package LinearDataStructure.LinkedListHead;
 
 import java.util.function.Consumer;
 
